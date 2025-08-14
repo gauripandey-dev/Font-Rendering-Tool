@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Font Rendering Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced Font Rendering Engine</h1>
+            <p>Professional typography with OpenType features and optimized text layout</p>
+        </header>
+
+        <!-- Mobile Navigation Toggle -->
+        <div class="mobile-nav-toggle">
+            <button id="toggleControls" class="toggle-btn">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <span class="toggle-label">Controls</span>
+        </div>
+
+        <!-- Collapsible Controls Panel -->
+        <div class="controls-wrapper" id="controlsWrapper">
+            <div class="controls-panel">
+                <div class="control-group">
+                    <label for="fontSelect">Font Family:</label>
+                    <select id="fontSelect">
+                        <option value="serif">Times New Roman (Serif)</option>
+                        <option value="sans-serif">Arial (Sans-serif)</option>
+                        <option value="monospace">Courier New (Monospace)</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Palatino">Palatino</option>
+                        <option value="Garamond">Garamond</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="fontSize">Font Size:</label>
+                    <input type="range" id="fontSize" min="12" max="72" value="18">
+                    <span id="fontSizeValue" class="value-display">18px</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="fontWeight">Font Weight:</label>
+                    <select id="fontWeight">
+                        <option value="100">Thin (100)</option>
+                        <option value="300">Light (300)</option>
+                        <option value="400" selected>Normal (400)</option>
+                        <option value="500">Medium (500)</option>
+                        <option value="700">Bold (700)</option>
+                        <option value="900">Black (900)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="letterSpacing">Letter Spacing:</label>
+                    <input type="range" id="letterSpacing" min="-2" max="5" value="0" step="0.1">
+                    <span id="letterSpacingValue" class="value-display">0px</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="lineHeight">Line Height:</label>
+                    <input type="range" id="lineHeight" min="1" max="3" value="1.4" step="0.1">
+                    <span id="lineHeightValue" class="value-display">1.4</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="wordSpacing">Word Spacing:</label>
+                    <input type="range" id="wordSpacing" min="-5" max="10" value="0" step="0.5">
+                    <span id="wordSpacingValue" class="value-display">0px</span>
+                </div>
+            </div>
+
+            <div class="opentype-features">
+                <h3>OpenType Features</h3>
+                <div class="features-grid">
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="kerning" checked>
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Kerning</span>
+                    </label>
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="ligatures">
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Ligatures</span>
+                    </label>
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="smallCaps">
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Small Caps</span>
+                    </label>
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="oldstyleNums">
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Oldstyle Numbers</span>
+                    </label>
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="tabularNums">
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Tabular Numbers</span>
+                    </label>
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="fractions">
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Fractions</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-alignment">
+                <h3>Text Layout & Alignment</h3>
+                <div class="alignment-controls">
+                    <button class="align-btn active" data-align="left">
+                        <span class="btn-icon">⟵</span>
+                        <span class="btn-text">Left</span>
+                    </button>
+                    <button class="align-btn" data-align="center">
+                        <span class="btn-icon">⟷</span>
+                        <span class="btn-text">Center</span>
+                    </button>
+                    <button class="align-btn" data-align="right">
+                        <span class="btn-icon">⟶</span>
+                        <span class="btn-text">Right</span>
+                    </button>
+                    <button class="align-btn" data-align="justify">
+                        <span class="btn-icon">⟷</span>
+                        <span class="btn-text">Justify</span>
+                    </button>
+                </div>
+                
+                <div class="advanced-layout">
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="hyphenation">
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Hyphenation</span>
+                    </label>
+                    <label class="feature-checkbox">
+                        <input type="checkbox" id="optimizeLayout">
+                        <span class="checkmark"></span>
+                        <span class="feature-label">Optimize Layout</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="sample-texts">
+                <h3>Sample Texts</h3>
+                <div class="sample-buttons">
+                    <button class="sample-btn" data-sample="pangram">📝 Pangram</button>
+                    <button class="sample-btn" data-sample="lorem">📄 Lorem</button>
+                    <button class="sample-btn" data-sample="typography">🎨 Typography</button>
+                    <button class="sample-btn" data-sample="numbers">🔢 Numbers</button>
+                    <button class="sample-btn" data-sample="ligatures">🔗 Ligatures</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rendering-area">
+            <div class="section-header">
+                <h3>Font Rendering Preview</h3>
+                <button id="fullscreenToggle" class="fullscreen-btn">⛶</button>
+            </div>
+            <div class="text-input-container">
+                <textarea id="textInput" placeholder="Type your text here to see advanced font rendering..." rows="4">The quick brown fox jumps over the lazy dog. ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 !@#$%^&*()_+-=[]{}|;':",.&lt;&gt;?/</textarea>
+            </div>
+            
+            <div id="renderingCanvas" class="rendering-canvas">
+                <div id="renderedText" class="rendered-text"></div>
+            </div>
+        </div>
+
+        <div class="metrics-panel">
+            <h3>Font Metrics & Performance</h3>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <div class="metric-icon">📝</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Characters</span>
+                        <span id="charCount" class="metric-value">0</span>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="metric-icon">📖</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Words</span>
+                        <span id="wordCount" class="metric-value">0</span>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="metric-icon">📏</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Lines</span>
+                        <span id="lineCount" class="metric-value">0</span>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Render Time</span>
+                        <span id="renderTime" class="metric-value">0ms</span>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="metric-icon">⭐</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Layout Score</span>
+                        <span id="layoutScore" class="metric-value">100</span>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="metric-icon">🎛️</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Features</span>
+                        <span id="activeFeatures" class="metric-value">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-panel">
+            <h3>Export Options</h3>
+            <div class="export-buttons">
+                <button id="exportCSS" class="export-btn">
+                    <span class="btn-icon">💾</span>
+                    <span class="btn-text">Export CSS</span>
+                </button>
+                <button id="exportImage" class="export-btn">
+                    <span class="btn-icon">🖼️</span>
+                    <span class="btn-text">Export Image</span>
+                </button>
+                <button id="copyText" class="export-btn">
+                    <span class="btn-icon">📋</span>
+                    <span class="btn-text">Copy Text</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
